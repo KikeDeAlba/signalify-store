@@ -6,36 +6,10 @@ export const createStore: CreateStore = (state, options) => {
     const { persist } = options || {};
 
     const data = state({
-        set(state) {
-            if (state instanceof Function) {
-                const normalizedSignalsObject = Object.entries(signalObject)
-                    .reduce((acc, [key, value]) => {
-                        // @ts-ignore
-                        acc[key] = value.value;
-                        return acc;
-                    }, {});
-
-                // @ts-ignore
-                const newValues = state(normalizedSignalsObject);
-
-                for (const [key, value] of Object.entries(newValues)) {
-                    // @ts-ignore
-                    signalObject[key].value = value;
-                }
-            }
-        },
+        set: cb => cb(signalObject),
         // @ts-ignore
         get() {
-            const normalizedSignalsObject = Object.entries(signalObject).reduce(
-                (acc, [key, value]) => {
-                    // @ts-ignore
-                    acc[key] = value.value;
-                    return acc;
-                },
-                {},
-            );
-
-            return normalizedSignalsObject;
+            return signalObject;
         },
     })
 
@@ -46,7 +20,3 @@ export const createStore: CreateStore = (state, options) => {
     return (findSignal) => findSignal(signalObject);
 };
 
-const store = createStore(({ set }) => ({
-    count: 0,
-    increment: () => set(state => ({ count: state.count + 1 })),
-}))

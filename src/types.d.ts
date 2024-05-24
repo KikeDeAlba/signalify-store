@@ -6,8 +6,8 @@ export type FindSignal<T extends object, E> = (data: SignalObject<T>) => E;
 
 export type State<T extends object> = (
     props: {
-        set: (state: Partial<T> | ((state: T) => Partial<T>)) => void;
-        get: () => T;
+        set: (state: (state: SignalObject<T>) => void) => void;
+        get: () => SignalObject<T>;
     }
 ) => T;
 
