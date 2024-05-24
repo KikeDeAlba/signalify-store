@@ -13,7 +13,7 @@ npm install signalify-store
 ## Usage
 
 ```js
-	import { createStore } from "signalify-store";
+import { createStore } from "signalify-store";
 ```
 
 ```js
