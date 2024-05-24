@@ -1,0 +1,17 @@
+{
+	"name": "signalify-store",
+	"version": "1.0.0",
+	"description": "",
+	"main": "build/index.js",
+	"module": "build/index.js",
+	"types": "src/types.d.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": ["signal", "store", "preact", "state"],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@preact/signals": "^1.2.3"
+	}
+}
