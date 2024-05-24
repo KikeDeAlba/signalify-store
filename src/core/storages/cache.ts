@@ -35,7 +35,7 @@ export const persistInCache = ({
                         {},
                     );
 
-                    const response = new Response(JSON.stringify(normalizedObject));
+                    const response = Response.json(normalizedObject);
 
                     cache.put(name, response);
                 });
