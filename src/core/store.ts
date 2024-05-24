@@ -5,7 +5,7 @@ import { configurePersist } from "./persist-config";
 export const createStore: CreateStore = (state, options) => {
     const { persist } = options || {};
 
-    const signalObject = SignalifyObject(state());
+    const signalObject = SignalifyObject(state);
 
     configurePersist(signalObject, persist);
 

@@ -4,10 +4,8 @@ export type SignalObject<T extends object> = { [K in keyof T]: Signal<T[K]> };
 
 export type FindSignal<T extends object, E> = (data: SignalObject<T>) => E;
 
-export type State<T extends object> = () => T;
-
 export type CreateStore = <T extends object>(
-    state: State<T>,
+    state: T,
     options?: StoreOptions,
 ) => <E>(findSignal: FindSignal<T, E>) => E;
 
