@@ -13,3 +13,14 @@ export function SignalifyObject<T extends object>(data: T) {
 
     return signalObject;
 }
+
+export function unSignalifyObject<T extends object>(signalObject: SignalObject<T>) {
+    return Object.entries(signalObject).reduce(
+        (acc, [key, value]) => {
+            // @ts-ignore
+            acc[key] = value.value;
+            return acc;
+        },
+        {} as T,
+    );
+}

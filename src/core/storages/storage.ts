@@ -1,4 +1,5 @@
 import type { PersistConfig } from "../../types";
+import { unSignalifyObject } from "../signalify";
 
 export const persistInStorage = ({
     name,
@@ -19,14 +20,7 @@ export const persistInStorage = ({
     }
 
     window.addEventListener("beforeunload", () => {
-        const normalizedObject = Object.entries(signalObject).reduce(
-            (acc, [key, value]) => {
-                // @ts-ignore
-                acc[key] = value.value;
-                return acc;
-            },
-            {},
-        );
+        const normalizedObject = unSignalifyObject(signalObject)
 
         storage.setItem(name, JSON.stringify(normalizedObject));
     });
