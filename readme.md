@@ -1,6 +1,5 @@
 
 # signals-store
-> Work in progress
 
 > A simple store for [Preact](https://preactjs.com/) using [Signals](https://github.com/preactjs/signals).
 
