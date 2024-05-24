@@ -1,6 +1,8 @@
 
 # signals-store
 
+[![npm version](https://badge.fury.io/js/signalify-store.svg)](https://badge.fury.io/js/signalify-store)
+
 > A simple store for [Preact](https://preactjs.com/) using [Signals](https://github.com/preactjs/signals).
 
 ## Install
