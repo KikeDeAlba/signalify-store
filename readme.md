@@ -14,7 +14,9 @@ npm install signalify-store
 
 ```js
 import { createStore } from "signalify-store";
+```
 
+```js
 // create a store with a default value
 const store = createStore({ count: 0 });
 
@@ -35,8 +37,6 @@ count.value++;
 ## Persist
 
 ```js
-import { createStore } from "@local/signals-store";
-
 const store = createStore(
 	{ count: 0 },
 	{
