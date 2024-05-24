@@ -7,13 +7,13 @@
 ## Install
 
 ```sh
-npm install @local/signals-store
+npm install signalify-store
 ```
 
 ## Usage
 
 ```js
-import { createStore } from "@local/signals-store";
+import { createStore } from "signalify-store";
 
 // create a store with a default value
 const store = createStore({ count: 0 });
