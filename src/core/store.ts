@@ -12,3 +12,9 @@ export const createStore: CreateStore = (state, options) => {
     return (findSignal) => findSignal(signalObject);
 };
 
+const store = createStore({
+    count: 0,
+    order: {
+        name: '',
+    }
+});
